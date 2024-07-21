@@ -56,6 +56,10 @@ app.use(cookieParser());
 app.use('/api', apiRouter);
 app.use('/', viewsRouter);
 
+app.get('/', (req, res) => {
+    res.redirect('/login');
+})
+
 app.use(errorMiddleware);
 
 cron.schedule('29 1 * * *', async () => {
