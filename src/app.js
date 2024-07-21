@@ -66,7 +66,7 @@ cron.schedule('29 1 * * *', async () => {
 const PORT = config.port;
 const ENV = config.node_env;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     log.info(`Server corriendo en puerto ${PORT}`);
     log.info(`Enviroment: ${ENV}`);
 });
