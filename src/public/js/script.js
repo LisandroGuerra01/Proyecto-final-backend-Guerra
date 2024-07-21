@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
 
             const userId = form.querySelector("input[name='userId']").value;
-
-            fetch(`/api/users/${userId}`, {
-                method: 'DELETE',
+            console.log("userID: ", userId);
+            fetch(`/api/users/delete-admin`, {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ userId })
+                body: JSON.stringify({ _id: userId })
             })
                 .then(response => response.json())
                 .then(data => {
