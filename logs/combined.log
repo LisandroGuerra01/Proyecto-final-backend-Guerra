@@ -1,0 +1,18 @@
+info: Server corriendo en puerto 9090
+info: Enviroment: dev
+info: MongoDB connected
+info: Server corriendo en puerto 9090
+info: Enviroment: dev
+info: MongoDB connected
+info: Server corriendo en puerto 9090
+info: Enviroment: dev
+info: MongoDB connected
+{"level":"info","message":"Server corriendo en puerto 3001"}
+{"level":"info","message":"Enviroment: prod"}
+{"level":"info","message":"MongoDB connected"}
+info: Server corriendo en puerto 9090
+info: Enviroment: dev
+info: MongoDB connected
+info: Server corriendo en puerto 9090
+info: Enviroment: dev
+info: MongoDB connected
