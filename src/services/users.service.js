@@ -1,4 +1,4 @@
-import usersMongo from '../dal/daos/usersDaos/usersMongo.js';
+import usersMongo from '../dal/DAOs/usersDaos/usersMongo.js';
 import { hashData, compareData } from '../utils/bcrypt.utils.js';
 import { generateToken, verifyToken, generateTokenResetPassword, verifyTokenResetPassword, decodeTokenResetPassword } from '../utils/jwt.utils.js';
 import { UsersDTO, UsersViewDTO, UsersViewID } from '../dal/dtos/users.dto.js';

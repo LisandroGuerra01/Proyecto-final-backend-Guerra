@@ -1,7 +1,7 @@
-import cartsMongo from '../dal/daos/cartsDaos/cartsMongo.js';
-import productsMongo from '../dal/daos/productsDaos/productsMongo.js';
-import ordersMongo from '../dal/daos/ordersDaos/ordersMongo.js';
-import usersMongo from '../dal/daos/usersDaos/usersMongo.js';
+import cartsMongo from '../dal/DAOs/cartsDaos/cartsMongo.js';
+import productsMongo from '../dal/DAOs/productsDaos/productsMongo.js';
+import ordersMongo from '../dal/DAOs/ordersDaos/ordersMongo.js';
+import usersMongo from '../dal/DAOs/usersDaos/usersMongo.js';
 import { verifyToken } from '../utils/jwt.utils.js'
 
 class CartsService {

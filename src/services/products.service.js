@@ -1,4 +1,4 @@
-import productsMongo from '../dal/daos/productsDaos/productsMongo.js';
+import productsMongo from '../dal/DAOs/productsDaos/productsMongo.js';
 import productsMocks from '../utils/mocks.utils.js';
 import { verifyToken } from '../utils/jwt.utils.js';
 import emailService from '../utils/emailService.utils.js';

@@ -1,4 +1,4 @@
-import businessMongo from '../DAL/DAOs/businessDaos/businessMongo.js'
+import businessMongo from '../dal/DAOs/businessDaos/businessMongo.js'
 
 class BusinessService {
     async findAll() {

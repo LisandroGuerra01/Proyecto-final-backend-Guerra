@@ -1,4 +1,4 @@
-import ordersMongo from '../dal/daos/ordersDaos/ordersMongo.js'
+import ordersMongo from '../dal/DAOs/ordersDaos/ordersMongo.js'
 
 class OrdersService {
     async findAll() {
