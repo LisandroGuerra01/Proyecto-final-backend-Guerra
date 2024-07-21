@@ -19,11 +19,6 @@ router.get('/login', (req, res) => {
     res.render("login")
 })
 
-//Endpoint para register de usuario
-router.get('/register', (req, res) => {
-    res.render("register")
-})
-
 //Endpoint para ver el perfil de usuario
 router.get("/profile", async (req, res) => {
     res.render("profile");
