@@ -2,23 +2,15 @@
     Profile
 </button>
 
-{{#if isAdmin}}
-<h1>(admin)</h1>
-{{/if}}
-
-{{#if role}}
-<h1>(user)</h1>
-{{/if}}
-
 <h2>
-    Welcome
+    Bienvenido
     {{email}}
 </h2>
 
 <section class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center">Productos en tiempo real</h1>
+            <h1 class="text-center">Catálogo de productos</h1>
         </div>
     </div>
     <div class="row">
@@ -31,38 +23,32 @@
                         <th scope="col">Precio</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Acciones</th>
+                        <th scope="col">Cantidad</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each products.docs}}
+                    {{#each products}}
                     <tr>
-                        <td>{{name}}</td>
-                        <td>{{description}}</td>
-                        <td>{{price}}</td>
-                        <td>{{stock}}</td>
+                        <td>{{this.name}}</td>
+                        <td>{{this.description}}</td>
+                        <td>{{this.price}}</td>
+                        <td>{{this.stock}}</td>
                         <td>
                             <button>
-                                <a href="/products/{{_id}}">Ver producto</a>
+                                <a href="/products/{{this._id}}">Ver producto</a>
                             </button>
+                        </td>
+                        <td>
+                            <form action="/api/carts/{{this.cid}}/product/{{this._id}}" method="POST">
+                                <input type="hidden" name="addProductToCart" value="{{this._id}}">
+                                <input type="number" name="quantity" min="1" max="{{this.stock}}" value="1" required>
+                                <button type="submit">Agregar al carrito</button>
+                            </form>
                         </td>
                     </tr>
                     {{/each}}
                 </tbody>
             </table>
-            {{! paginador }}
-
-            {{#if products.hasPrevPage}}
-            <button>
-                <a href="/products/page/{{products.prevPage}}">Anterior</a>
-            </button>
-            {{/if}}
-
-            {{#if products.hasNextPage}}
-            <button>
-                <a href="/products/page/{{products.nextPage}}">Siguiente</a>
-            </button>
-            {{/if}}
-
         </div>
     </div>
 </section>

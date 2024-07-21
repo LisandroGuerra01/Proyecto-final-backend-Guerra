@@ -39,7 +39,11 @@ const hbs = handlebars.create({
     eq: function (a, b) {
       return a === b;
     }
-  }
+  },
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true
+}
 });
 
 app.engine('handlebars', hbs.engine);
@@ -67,7 +71,7 @@ cron.schedule('29 1 * * *', async () => {
     log.info('Usuarios inactivos eliminados');
 });
 
-const PORT = process.env.PORT||9090;
+const PORT = config.port;
 const ENV = config.node_env;
 
 app.listen(PORT, "0.0.0.0", () => {

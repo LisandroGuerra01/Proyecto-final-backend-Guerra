@@ -1,13 +1,26 @@
 <div>
     <h1>Mi Carrito</h1>
-    {{#each products}}
-        <div>
-            <h1>Nombre: {{name}}</h1>
-            <h2>{{description}}</h2>
-            <h3>${{price}}</h3>
-            <h4>{{stock}}</h4>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Cantidad</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                    <tr>
+                        <td>{{this.pid}}</td>
+                        <td>{{this.quantity}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </div>
-    {{/each}}
+    </div>
     <button type="button" onclick="location.href='/purchase'">Finalizar compra</button>
 
 </div>

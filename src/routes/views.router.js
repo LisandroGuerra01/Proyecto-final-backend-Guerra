@@ -19,6 +19,11 @@ router.get('/login', (req, res) => {
     res.render("login")
 })
 
+//Endpoint para register de usuario
+router.get('/register', (req, res) => {
+    res.render("register")
+})
+
 //Endpoint para ver el perfil de usuario
 router.get("/profile", async (req, res) => {
     res.render("profile");
@@ -32,51 +37,42 @@ router.get('/modify', verifyTokenAdmin, async (req, res) => {
     });
 });
 
+//Endpoint para ver todos los productos si se está logueado
+router.get('/products', async (req, res) => {
+    const products = await productsService.findAll();
+    const { _id, name, description, price, stock, category } = products
+    const uid = await userService.findAllConId();
+    const { cart } = uid
+    console.log(cart);
+    res.render("products", {
+        products,
+        _id,
+        name,
+        description,
+        price,
+        stock,
+        category,
+    })
+})
+
 //Endpoint para visualizar el carrito de compras
 router.get('/carts/:id', async (req, res) => {
     const cart = await cartsService.findById(req.params.id);
     const { products } = cart;
-    console.log(products);
     res.render("cart", {
-        products
+        products,
+        pid: products.pid,
+        quantity: products.quantity
     })
 })
 
 //Endpoint para ver mensaje de compra exitosa
-router.get('/purchase', (req, res) => {
+router.get('/purchase', async (req, res) => {
+    const purchase = await cartsService.purchase()
+    console.log(purchase);
     res.render("purchase")
 })
 
-//Endpoint para ver todos los productos si se está logueado
-router.get('/products', async (req, res) => {
-    const products = await productsService.findAll();
-    res.render("products", {
-        products
-    })
-})
-
-//Endpoint para ver todos los productos con paginación
-// router.get('/products/page/:page', isLogged, async (req, res) => {
-//     const products = await productsService.findAll(2, page);
-
-//     res.render("products", { products });
-// });
-
-//Endpoint para register de usuario
-router.get('/register', (req, res) => {
-    res.render("users")
-})
-
-
-// Endpoint de error de registro
-// router.get("/errorRegister", (req, res) => {
-//     res.render("errorRegister");
-// });
-
-//Endpoint de error de login
-// router.get("/errorLogin", (req, res) => {
-//     res.render("errorLogin");
-// });
 
 
 

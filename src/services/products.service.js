@@ -7,6 +7,7 @@ class ProductsService {
     async findAll() {
         try {
             const result = await productsMongo.findAll();
+            if (result.length === 0) return ("No se encontraron productos");
             return result;
         } catch (error) {
             return error;
