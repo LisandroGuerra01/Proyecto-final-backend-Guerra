@@ -62,7 +62,7 @@ class UsersController {
 
     async deleteUsersInactive(req, res) {
         try {
-            const result = await usersService.deleteIfInactive(req.params.id);
+            const result = await usersService.deleteIfInactive();
             res.status(200).json(result);
         } catch (error) {
             res.status(500).json(error);
