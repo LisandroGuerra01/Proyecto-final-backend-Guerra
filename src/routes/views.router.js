@@ -19,6 +19,10 @@ router.get('/login', (req, res) => {
     res.render("login")
 })
 
+router.get('/register', (req, res) => {
+    res.render("register")
+})
+
 //Endpoint para ver el perfil de usuario
 router.get("/profile", async (req, res) => {
     res.render("profile");
@@ -67,8 +71,5 @@ router.get('/purchase', async (req, res) => {
     console.log(purchase);
     res.render("purchase")
 })
-
-
-
 
 export default router;

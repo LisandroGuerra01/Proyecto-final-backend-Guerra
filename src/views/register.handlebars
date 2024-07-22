@@ -1,0 +1,17 @@
+<h1>
+  Register
+</h1>
+
+<form action="/api/users/" method="POST">
+  <input type="text" name="name" id="name" placeholder="Name" />
+  <input type="email" name="email" id="email" placeholder="Email" />
+  <input type="number" name="age" id="age" placeholder="Age" />
+  <input type="password" name="password" id="password" placeholder="Password" />
+  <input type="submit" value="Register" />
+</form>
+
+<h2>Register with Github</h2>
+<button type="button" onclick="location.href='/api/users/github'">Github</button>
+
+<h2>Go to login</h2>
+<button type="button" onclick="location.href='/login'">Login</button>

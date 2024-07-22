@@ -2,7 +2,7 @@
   "name": "main",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "start": "node src/app.js",
@@ -32,6 +32,7 @@
     "nodemailer": "^6.9.13",
     "nodemon": "^3.1.0",
     "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
     "passport-local": "^1.0.0",
     "passport-session": "^1.0.2",
     "swagger-jsdoc": "^6.2.8",

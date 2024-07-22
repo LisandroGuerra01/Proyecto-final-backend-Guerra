@@ -13,6 +13,8 @@ import handlebars from 'express-handlebars';
 import viewsRouter from './routes/views.router.js';
 import cron from 'node-cron';
 import usersService from './services/users.service.js';
+import passport from 'passport';
+import './utils/passportStrategies.js';
 
 
 const app = express();
@@ -21,6 +23,8 @@ const log = logger();
 app.use(compression());
 
 connectDB();
+
+app.use(passport.initialize());
 
 const swaggerOptions = {
     definition: {
