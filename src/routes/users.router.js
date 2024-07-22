@@ -16,11 +16,6 @@ router.get('/github/callback', passport.authenticate('Github', {
     successRedirect: '/products',
     failureRedirect: '/errorRegister',
 }), (req, res) => {
-    req.session.email = req.user.email;
-    req.session.logged = true;
-    req.session.userId = req.user._id;
-    req.session.isAdmin = false;
-    req.session.role = req.user.role;
     res.redirect('/profile');
 });
 
